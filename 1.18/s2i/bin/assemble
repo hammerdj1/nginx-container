@@ -10,7 +10,10 @@ fix-permissions ./
 
 if [ -f ./nginx.conf ]; then
   echo "---> Copying nginx.conf configuration file..."
-  cp -v ./nginx.conf "${NGINX_CONF_PATH}"
+  #cp -v ./nginx.conf "${NGINX_CONF_PATH}"
+  mkdir -p /opt/app-root/src/conf
+  cp -v ./nginx.conf /opt/app-root/src/conf
+  ln -s /opt/app-root/src/conf "${NGINX_CONF_PATH}"/nginx.conf
   rm -f ./nginx.conf
 fi
 
