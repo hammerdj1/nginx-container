@@ -13,6 +13,7 @@ if [ -f ./nginx.conf ]; then
   #cp -v ./nginx.conf "${NGINX_CONF_PATH}"
   mkdir -p /opt/app-root/src/conf
   cp -v ./nginx.conf /opt/app-root/src/conf
+  echo "Creating symlink ${NGINX_CONF_PATH}/nginx.conf"
   ln -s /opt/app-root/src/conf "${NGINX_CONF_PATH}"/nginx.conf
   rm -f ./nginx.conf
 fi
